@@ -9,13 +9,6 @@
 </p>
 
 ---
-
-i tend to work from behind the scenes — architecture, research, the parts that don't come with a star button.
-
-what's public is the tip. deep in bittensor, previously broke things at eigenlayer, chainlink, and whatever hackathon we showed up to with [2bb](https://2bb.dev).
-
-currently researching how LLMs reason (or don't).
-
 <br/>
 
 <p align="center">
