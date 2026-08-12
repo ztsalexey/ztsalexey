@@ -9,15 +9,6 @@
 </p>
 
 ---
-<br/>
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=solidity,rust,python,typescript,go&theme=dark" />
-  </a>
-</p>
-
-<br/>
 
 <p align="center">
   <picture>
