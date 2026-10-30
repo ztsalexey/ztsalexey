@@ -1,11 +1,16 @@
 <p align="center">
-  <img src="cocoon.svg" alt="intelligence in transit" width="100%"/>
+  <img src="winter.svg" alt="intelligence in transit" width="100%"/>
 </p>
 
 <h3 align="center">hi, i'm alexey</h3>
 
 <p align="center">
   <em>most of what i build, you won't find here.</em>
+</p>
+
+<p align="center">
+  grew up deep in siberia, where winter lasts most of the year.<br/>
+  so i build things that keep running in the cold.
 </p>
 
 <p align="center">
