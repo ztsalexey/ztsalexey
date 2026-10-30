@@ -8,6 +8,10 @@
   <em>most of what i build, you won't find here.</em>
 </p>
 
+<p align="center">
+  building <a href="https://openorange.ai">openorange</a> · <a href="https://ztsalexey.github.io">portfolio</a>
+</p>
+
 ---
 
 <p align="center">
