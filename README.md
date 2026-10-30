@@ -10,7 +10,8 @@
 
 <p align="center">
   grew up deep in siberia, where winter lasts most of the year.<br/>
-  so i build things that keep running in the cold.
+  now in the scottsdale desert, where it never shows up. 🌵<br/>
+  so i build things that keep running in the cold, and at 115°f.
 </p>
 
 <p align="center">
