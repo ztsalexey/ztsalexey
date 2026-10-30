@@ -33,7 +33,7 @@ the rest is at <a href="https://openorange.ai">openorange</a>.
 </p>
 
 <p align="center">
-  building <a href="https://openorange.ai">openorange</a> · <a href="https://ztsalexey.github.io">portfolio</a>
+  building <a href="https://openorange.ai">openorange</a> · <a href="https://ztsalexey.github.io">portfolio</a> · <a href="https://www.linkedin.com/in/alexey-zenin">linkedin</a>
 </p>
 
 ---
