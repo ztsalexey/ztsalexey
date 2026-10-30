@@ -1,0 +1,49 @@
+name: Banner
+
+# Redraws the README banner (winter.svg for the dark theme, desert.svg for the light one) every hour from the public
+# contribution calendar and, once it exists, the release timestamps on the pulse branch. Publishes to the banner
+# branch, like the snake's output branch, so main's history stays clean.
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: banner
+  cancel-in-progress: false
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Contribution calendar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh api graphql -f query='{ user(login: "${{ github.repository_owner }}") { contributionsCollection {
+          contributionCalendar { weeks { contributionDays { date contributionCount } } } } } }' > calendar.json
+      - name: Release timestamps
+        run: |
+          if git fetch -q --depth=1 origin pulse; then git show FETCH_HEAD:releases.json > releases.json; fi
+      - name: Draw
+        run: python3 banner/make_banner.py --calendar calendar.json --releases releases.json --out dist
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git fetch -q --depth=1 origin banner \
+            && git show FETCH_HEAD:winter.svg | cmp -s - dist/winter.svg \
+            && git show FETCH_HEAD:desert.svg | cmp -s - dist/desert.svg; then
+            echo "unchanged"; exit 0
+          fi
+          cd dist
+          git init -q -b banner
+          git add winter.svg desert.svg
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -qm "Redraw banner"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" banner
